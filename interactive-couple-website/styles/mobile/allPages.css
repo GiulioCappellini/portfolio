@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+html {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+main {
+    min-height: calc(100dvh - 40px - 56px);
+    background: pink url(../../images_videos/images/forStyle/bakcgroundMobile.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 10px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 1px;
+    margin-top: 10px;
+}
+
+section figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+figcaption.description {
+    font-size: 1.15em;
+    padding: 3px;
+    border-bottom: 2px solid black;
+    background-color: white;
+}
+
+.container {
+    width: 250px;
+    height: 170px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 2px solid black;
+    box-shadow: 0px -1px 0px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+footer {
+    background-color: rgb(35, 35, 35);
+    color: white;
+    height: 40px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the JS */
+.toReveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.45s ease-in-out;
+}
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0px);
+}

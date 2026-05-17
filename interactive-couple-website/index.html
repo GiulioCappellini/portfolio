@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images_videos/images/forStyle/rings.ico" type="image/x-icon">
+    <title>Nosso site de casal</title>
+    <link rel="stylesheet" href="styles/mobile/allHeader.css">
+    <link rel="stylesheet" href="styles/mobile/home.css">
+    <link rel="stylesheet" href="styles/desktop/header.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="styles/desktop/allPages.css" media="screen and (min-width: 768px)">
+</head>
+<body>
+    <header id="headerOfIndex">
+        <span id="userLoged">
+            <img src="" alt="The user image" id="userImage">
+            <p id="userName"></p>
+        </span>
+        <nav onclick="toogleNavLinks()">
+            <span id="menu">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </span>
+            <div id="navLinks">
+                <h2>Quick acess</h2>
+                <ul>
+                    <li><a href="pages/cardTrips.html">🗺️ Travels</a></li>
+                    <li><a href="pages/cardFellings.html">❤️ Fellings</a></li>
+                    <li><a href="pages/cardMemories.html">📷 Memories</a></li>
+                    <li><a href="pages/cardEvolution.html">📈 Evolution</a></li>
+                    <li><a href="pages/cardFamily.html">👩‍❤️‍💋‍👨 Our family</a></li>
+                    <li><a href="pages/cardDates.html">📆 Our dates</a></li>
+                    <li><a href="pages/cardLinks.html">🌐 Other sites</a></li>
+                    <li><a href="pages/cardUpdates.html">⬆️ Updates</a></li>
+                    <li><a href="pages/configs.html">⚙️ Configs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <aside class="containerDate">
+            <p class="togetherSince"></p>
+        </aside>
+        <figure class="card" id="cardTrips">
+            <a href="pages/cardTrips.html">
+                <figcaption>Our travels</figcaption>
+                <img src="images_videos/images/forStyle/travelIlustration.png" alt="Airplanes around the world">
+            </a>
+        </figure>
+        <figure class="card" id="cardFellings">
+            <a href="pages/cardFellings.html">
+                <figcaption>Our fellings</figcaption>
+                <img src="images_videos/images/forStyle/fellingsIlustration.png" alt="A man giving flowers and cards to a women">
+            </a>
+        </figure>
+        <figure class="card" id="cardMemories">
+            <a href="pages/cardMemories.html">
+                <figcaption>Our memories</figcaption>
+                <img src="images_videos/images/forStyle/memoriesIlustration.png" alt="A couple taking a photo togheter">
+            </a>
+        </figure>
+        <figure class="card" id="cardEvolution">
+            <a href="pages/cardEvolution.html">
+                <figcaption>Our evolution</figcaption>
+                <img src="images_videos/images/forStyle/evolutionIlustration.png" alt="A person jumping through levels">
+            </a>
+        </figure>
+        <figure class="card" id="cardFamily">
+            <a href="pages/cardFamily.html">
+                <figcaption>Our family</figcaption>
+                <img src="images_videos/images/forStyle/familyIlustration.png" alt="A family going to eat together">
+            </a>
+        </figure>
+        <figure class="card" id="cardDates">
+            <a href="pages/cardDates.html">
+                <figcaption>Our especial dates</figcaption>
+                <img src="images_videos/images/forStyle/ilustrationCalendar.png" alt="A boy lying among calendars">
+            </a>
+        </figure>
+        <figure class="card" id="cardUpdates">
+            <a href="pages/cardUpdates.html">
+                <figcaption>Future updates</figcaption>
+                <img src="images_videos/images/forStyle/underConstructionIlustration.png" alt='PC with a "Under cosntruction" mesage'>
+            </a>
+        </figure>
+        <figure class="card" id="cardLinks">
+            <a href="pages/cardLinks.html">
+                <figcaption>Other websites</figcaption>
+                <img src="images_videos/images/forStyle/otherLinksIlustration.png" alt='Pages on a computer'>
+            </a>
+        </figure>
+    </main>
+    <footer><a href="pages/credints.html">Credits/Atribuations</a></footer>
+
+    <script src="scripts/header.js"></script>
+    
+    <script>
+        const together = document.querySelector(".togetherSince");
+
+        function unitLabel(value, singular, plural) {return value === 1 ? singular : plural};
+
+        function getTimeTogether(startDate) {
+            const now = new Date();
+
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+
+            if (days < 0) {
+                months--;
+                const prevMonthDays = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+                days += prevMonthDays;
+            };
+            if (months < 0) {
+                years--;
+                months += 12;
+            };
+
+            const diffMs = now - startDate;
+            const totalHours = Math.floor(diffMs / 3600000);
+            const hours = totalHours % 24;
+
+            const parts = [];
+            if (years > 0) parts.push(`${years} ${unitLabel(years, "Ano", "Anos")}`);
+            if (months > 0) parts.push(`${months} ${unitLabel(months, "Mês", "Meses")}`);
+            if (days > 0) parts.push(`${days} ${unitLabel(days, "Dia", "Dias")}`);
+            if (hours > 0) parts.push(`${hours} ${unitLabel(hours, "Hora", "Horas")}`);
+            if (parts.length === 0) return "";
+
+            if (parts.length === 1) return `${parts[0]}`;
+            if (parts.length === 2) return `${parts[0]} e ${parts[1]}`;
+            return `${parts.slice(0, -1).join(", ")} e ${parts.at(-1)}`;
+        };
+
+        const startDate = new Date("2025-06-04T00:00:00");
+
+        function renderTogether() {together.innerText = getTimeTogether(startDate)};
+
+        renderTogether();
+        
+        let hourIntervalId = null;
+        function startHourSync() {
+            if (hourIntervalId) clearInterval(hourIntervalId);
+
+            const now = new Date();
+            const msUntilNextHour = (60 - now.getMinutes()) * 60000 - now.getSeconds() * 1000 - now.getMilliseconds();
+
+            setTimeout(() => {
+                renderTogether();
+                hourIntervalId = setInterval(renderTogether, 3600000);
+            }, Math.max(0, msUntilNextHour));
+        };
+
+        startHourSync();
+    </script>
+</body>
+</html>

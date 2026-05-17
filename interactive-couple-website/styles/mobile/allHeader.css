@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    height: 56px;
+    background: pink url('../../images_videos/images/forStyle/simpleBackground.jpg') no-repeat center center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+header > span {
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header #userImage {
+    clip-path: circle();
+    width: 40px;
+}
+
+span#menu {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 15px;
+}
+
+nav .bar {
+    background-color: black;
+    margin: 3px;
+    width: 24px;
+    height: 3px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease;
+}
+
+#bar1 {top: 15%;}
+#bar3 {top: 85%;}
+
+#bar1.animate {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+#bar2.animate {opacity: 0;}
+#bar3.animate {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+nav #navLinks {
+    display: none;
+    width: 190px;
+    padding: 14px;
+    background: pink url('../../images_videos/images/forStyle/simpleBackground.jpg') no-repeat center center;
+    position: absolute;
+    left: calc(100% - 190px);
+    top: 56px;
+    z-index: 1;
+    border-bottom-left-radius: 10px;
+}
+
+nav #navLinks h2 {
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#navLinks li {
+    list-style: none;
+    cursor: pointer;
+    width: 150px;
+    text-indent: 10px;
+    padding: 2px;
+    margin: auto;
+    margin-bottom: 18px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+li a {color: rgb(37, 37, 187);}
+
+/* Styles from JS */
+.rotateImage {
+    transform: rotate(-0.15turn);
+}
+
+.showNavLinks {display: block !important;}

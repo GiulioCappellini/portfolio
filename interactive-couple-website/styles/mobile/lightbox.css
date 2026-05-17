@@ -1,0 +1,45 @@
+.lightbox {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    background-color: rgb(20, 20, 20);
+    z-index: 998;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.lightboxImage {
+    max-width: 98%;
+    max-height: 90%;
+    object-fit: contain;
+    position: relative;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    transform: scale(0.8);
+}
+.closeButton img {
+    filter: invert();
+}
+
+.downloadButton {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+}
+.downloadButton img {
+    object-fit: contain;
+    width: 40px;
+    filter: invert();
+}
