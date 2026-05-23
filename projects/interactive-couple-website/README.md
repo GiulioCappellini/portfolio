@@ -37,7 +37,7 @@ Initial version (MVP / Prototype)
 
 ## Live
 
-https://giuliocappellini.github.io/portifolio/interactive-couple-website/index.html
+[Interactive-couple-website](https://giuliocappellini.github.io/portifolio/interactive-couple-website/index.html)
 
 ## Observation
 
