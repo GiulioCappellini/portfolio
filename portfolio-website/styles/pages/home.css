@@ -47,31 +47,18 @@
     color: var(--textMuted);
 }
 
-.hero-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 3rem;
-}
-
-.hero-cta a {
-    display: inline-flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    font-weight: 500;
-    border-radius: 0.625rem;
-}
 .hero-cta a,
 .card-actions a {
     transition: transform 0.15s ease-in-out, filter 0.15s ease-in-out;
 }
 
-.hero-cta a:hover,
-.card-actions a:hover {
-    transform: translateY(-2px);
-}
-.btn-primary:hover {
-    filter: drop-shadow(0px 0px 6px var(--accent));
+/* #contact {
+    margin-top: 60px;
+} */
+
+.clicable {
+    text-decoration: underline;
+    user-select: text;
 }
 
 .aditional-info {
@@ -89,16 +76,10 @@
     text-align: center;
 }
 
-#sobre .about-grid {
+#about .about-grid {
     display: grid;
     gap: 3rem;
 }
-
-/* @media (min-width: 768px) {
-    #sobre .about-grid {
-        grid-template-columns: 1fr 1.2fr;
-    }
-} */
 
 .about-card {
     padding: 2rem;
@@ -118,23 +99,23 @@
     line-height: 1.7;
 }
 
-#sobre dl {
+dl {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-#sobre .list-item {
+.list-item {
     padding-left: 1.5rem;
     border-left: 2px solid var(--border);
 }
 
-#sobre dt {
+dt {
     margin-bottom: 0.25rem;
     font-weight: 600;
 }
 
-#sobre dd {
+dd {
     font-size: 0.9em;
     color: var(--textMuted);
 }
@@ -163,4 +144,52 @@
 }
 .hide-alert {
     animation: hide-alert 0.3s ease-in-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .hero-cta a {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        font-weight: 500;
+        border-radius: 0.625rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .group-grid {
+        display: grid;
+        grid-template-rows: 270px auto;
+        grid-template-columns: auto 1fr;
+    }
+
+    @media screen and (max-width: 900px) {
+        #contact {margin-top: 60px;}
+    }
+
+    .hero-cta {
+        display: none;
+    }
+
+    .clicable:hover {
+        color: #396BCE;
+    }
+
+    .card-actions a:hover {
+        transform: translateY(-2px);
+    }
+    .btn-primary:hover {
+        filter: drop-shadow(0px 0px 6px var(--accent));
+    }
+
+    #about .about-grid {
+        grid-template-columns: 1fr 1.2fr;
+    }
 }

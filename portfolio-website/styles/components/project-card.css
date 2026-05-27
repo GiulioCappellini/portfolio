@@ -1,10 +1,22 @@
+#projects {
+    grid-area: 1 / 2 / span 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
 .project-card {
+    min-width: 320px;
+    max-width: 320px;
+    height: 625px;
     display: flex;
     flex-direction: column;
     background: var(--bgCard);
@@ -90,9 +102,43 @@
     border-radius: 0.625rem;
 }
 
-.card-hover {
-    transition: transform 0.2s ease-in-out;
-}
-.card-hover:hover {
-    transform: scale(1.02);
+@media (min-width: 768px) {
+    #projects h2 {
+        margin-top: 20px;
+    }
+
+    .project-card {
+        max-width: 360px;
+    }
+
+    /* Future feature: infinite carousel of all projects
+
+    .main-card {
+        z-index: 999;
+        filter: drop-shadow(2px 0 6px rgba(0, 0, 0, 0.5)) drop-shadow(-2px 0 6px rgba(0, 0, 0, 0.5));
+    }
+    .projects-grid {
+        position: relative;
+    }
+    .prev-card {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%) scale(0.9);
+        filter: blur(3px);
+    }
+    .next-card {
+        position: absolute;
+        top: 50%;
+        left: 65%;
+        transform: translate(-50%, -50%) scale(0.9);
+        filter: blur(3px);
+    } */
+
+    .card-hover {
+        transition: transform 0.2s ease-in-out;
+    }
+    .card-hover:hover {
+        transform: scale(1.02);
+    }
 }
